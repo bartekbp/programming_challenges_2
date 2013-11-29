@@ -1,2 +1,1 @@
-programmin_challenger_2
-=======================
+Java solutions to programming challenges
