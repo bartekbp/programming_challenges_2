@@ -21,7 +21,7 @@ public class ShellSortTest {
     @Test
     public void testRun() throws Exception {
         // given
-        final String testName = "shellsort-test1";
+        final String testName = "shellsort/shellsort-test1";
         ioTestHelper.setInput(testName);
 
         ShellSort insertionSort = new ShellSort();
