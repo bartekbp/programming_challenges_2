@@ -1,11 +1,11 @@
-package shellsort;
+package primaryarithmetic;
 
 import helpers.IOTestHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ShellSortTest {
+public class PrimaryArithmeticTest {
     private final IOTestHelper ioTestHelper = new IOTestHelper();
 
     @Before
@@ -21,13 +21,13 @@ public class ShellSortTest {
     @Test
     public void testRun() throws Exception {
         // given
-        final String testName = "shellsort/shellsort-test1";
+        final String testName = "primaryarithmetic/primaryArithmetic-test1";
         ioTestHelper.setInput(testName);
 
-        ShellSort shellSort = new ShellSort();
+        PrimaryArithmetic primaryArithmetic = new PrimaryArithmetic();
 
         // when
-        shellSort.run();
+        primaryArithmetic.run();
 
         // then
         ioTestHelper.assertOutput(testName);
