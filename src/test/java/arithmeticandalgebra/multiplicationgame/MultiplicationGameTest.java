@@ -1,12 +1,13 @@
-package shellsort;
+package arithmeticandalgebra.multiplicationgame;
 
 import helpers.IOTestHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ShellSortTest {
-    private final IOTestHelper ioTestHelper = new IOTestHelper(ShellSortTest.class.getPackage());
+
+public class MultiplicationGameTest {
+    private final IOTestHelper ioTestHelper = new IOTestHelper(MultiplicationGameTest.class.getPackage());
 
     @Before
     public void setUp() {
@@ -24,10 +25,10 @@ public class ShellSortTest {
         final String testName = "test1";
         ioTestHelper.setInput(testName);
 
-        ShellSort shellSort = new ShellSort();
+        MultiplicationGame multiplicationGame = new MultiplicationGame();
 
         // when
-        shellSort.run();
+        multiplicationGame.run();
 
         // then
         ioTestHelper.assertOutput(testName);

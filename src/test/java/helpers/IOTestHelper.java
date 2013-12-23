@@ -2,10 +2,7 @@ package helpers;
 
 import org.apache.commons.io.IOUtils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
@@ -14,6 +11,12 @@ public class IOTestHelper {
     private PrintStream oldOutput;
     private ByteArrayOutputStream newOutput;
     private InputStream oldInput;
+    private String testDirectory;
+
+
+    public IOTestHelper(Package testDirectory) {
+        this.testDirectory = testDirectory.getName().replaceAll("\\.", File.separator);
+    }
 
     public void setUp() {
         System.out.flush();
@@ -54,7 +57,7 @@ public class IOTestHelper {
     }
 
     private InputStream readResource(String file) {
-        return this.getClass().getResourceAsStream("../" + file);
+        return this.getClass().getResourceAsStream(Paths.get("..", testDirectory, file).toString());
     }
 
 

@@ -1,12 +1,12 @@
-package shellsort;
+package arithmeticandalgebra.ones;
 
 import helpers.IOTestHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ShellSortTest {
-    private final IOTestHelper ioTestHelper = new IOTestHelper(ShellSortTest.class.getPackage());
+public class OnesTest {
+    private final IOTestHelper ioTestHelper = new IOTestHelper(OnesTest.class.getPackage());
 
     @Before
     public void setUp() {
@@ -24,10 +24,10 @@ public class ShellSortTest {
         final String testName = "test1";
         ioTestHelper.setInput(testName);
 
-        ShellSort shellSort = new ShellSort();
+        Ones ones = new Ones();
 
         // when
-        shellSort.run();
+        ones.run();
 
         // then
         ioTestHelper.assertOutput(testName);

@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class FootballTest {
-    private final IOTestHelper ioTestHelper = new IOTestHelper();
+    private final IOTestHelper ioTestHelper = new IOTestHelper(FootballTest.class.getPackage());
 
     @Before
     public void setUp() {
@@ -21,7 +21,7 @@ public class FootballTest {
     @Test
     public void test1() throws Exception {
         // given
-        final String testName = "football/football-test1";
+        final String testName = "test1";
         ioTestHelper.setInput(testName);
 
         Football football = new Football();
@@ -36,7 +36,7 @@ public class FootballTest {
     @Test
     public void test2() throws Exception {
         // given
-        final String testName = "football/football-test2";
+        final String testName = "test2";
         ioTestHelper.setInput(testName);
 
         Football football = new Football();
@@ -51,7 +51,7 @@ public class FootballTest {
     @Test
     public void test3() throws Exception {
         // given
-        final String testName = "football/football-test3";
+        final String testName = "test3";
         ioTestHelper.setInput(testName);
 
         Football football = new Football();

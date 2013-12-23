@@ -1,12 +1,12 @@
-package shellsort;
+package arithmeticandalgebra.sternbrocotnumbersystem;
 
 import helpers.IOTestHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ShellSortTest {
-    private final IOTestHelper ioTestHelper = new IOTestHelper(ShellSortTest.class.getPackage());
+public class SternBrocotNumberSystemTest {
+    private final IOTestHelper ioTestHelper = new IOTestHelper(SternBrocotNumberSystemTest.class.getPackage());
 
     @Before
     public void setUp() {
@@ -24,10 +24,10 @@ public class ShellSortTest {
         final String testName = "test1";
         ioTestHelper.setInput(testName);
 
-        ShellSort shellSort = new ShellSort();
+        SternBrocotNumberSystem sternBrocotNumberSystem = new SternBrocotNumberSystem();
 
         // when
-        shellSort.run();
+        sternBrocotNumberSystem.run();
 
         // then
         ioTestHelper.assertOutput(testName);
