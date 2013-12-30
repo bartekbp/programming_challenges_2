@@ -1,4 +1,4 @@
-package pairsumoniousnumbers;
+package arithmeticandalgebra.pairsumoniousnumbers;
 
 import java.io.IOException;
 import java.util.*;

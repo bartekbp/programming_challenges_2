@@ -1,4 +1,4 @@
-package pairsumoniousnumbers;
+package arithmeticandalgebra.pairsumoniousnumbers;
 
 import helpers.IOTestHelper;
 import org.junit.After;
