@@ -1,4 +1,4 @@
-package arithmeticandalgebra.howmanyfibs;
+package combinatorics.howmanyfibs;
 
 import java.io.IOException;
 import java.math.BigInteger;

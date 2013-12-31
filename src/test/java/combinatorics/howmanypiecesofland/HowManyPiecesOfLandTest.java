@@ -1,11 +1,11 @@
-package arithmeticandalgebra.howmanyfibs;
+package combinatorics.howmanypiecesofland;
 import helpers.IOTestHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class HowManyFibsTest {
-    private final IOTestHelper ioTestHelper = new IOTestHelper(HowManyFibsTest.class.getPackage());
+public class HowManyPiecesOfLandTest {
+    private final IOTestHelper ioTestHelper = new IOTestHelper(HowManyPiecesOfLandTest.class.getPackage());
 
     @Before
     public void setUp() {
@@ -23,10 +23,10 @@ public class HowManyFibsTest {
         final String testName = "test1";
         ioTestHelper.setInput(testName);
 
-        HowManyFibs howManyFibs = new HowManyFibs();
+        HowManyPiecesOfLand howManyPiecesOfLand = new HowManyPiecesOfLand();
 
         // when
-        howManyFibs.run();
+        howManyPiecesOfLand.run();
 
         // then
         ioTestHelper.assertOutput(testName);
