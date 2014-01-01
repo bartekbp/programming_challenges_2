@@ -60,7 +60,7 @@ class Counting implements Runnable {
         data[0] = BigInteger.ONE;
         data[1] = two;
         data[2] = two.add(two).add(BigInteger.ONE);
-        
+
         for(int i = 3; i < max + 1; i++) {
             data[i] = data[i - 3].add(data[i - 2]).add(data[i - 1].multiply(two));
         }
