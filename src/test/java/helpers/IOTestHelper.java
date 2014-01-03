@@ -11,12 +11,8 @@ public class IOTestHelper {
     private PrintStream oldOutput;
     private ByteArrayOutputStream newOutput;
     private InputStream oldInput;
-    private String testDirectory;
+    private boolean isClosed = false;
 
-
-    public IOTestHelper(Package testDirectory) {
-        this.testDirectory = testDirectory.getName().replaceAll("\\.", File.separator);
-    }
 
     public void setUp() {
         System.out.flush();
@@ -27,9 +23,13 @@ public class IOTestHelper {
     }
 
     public void tearDown() {
-        System.out.flush();
-        System.setOut(oldOutput);
-        System.setIn(oldInput);
+        if(!isClosed) {
+            System.out.flush();
+            System.setOut(oldOutput);
+            System.setIn(oldInput);
+        }
+
+        isClosed = true;
     }
 
     private String getOutput() {
@@ -57,8 +57,7 @@ public class IOTestHelper {
     }
 
     private InputStream readResource(String file) {
-        return this.getClass().getResourceAsStream(Paths.get("..", testDirectory, file).toString());
+        return ClassLoader.getSystemClassLoader().getResourceAsStream(Paths.get(file).toString());
     }
-
 
 }

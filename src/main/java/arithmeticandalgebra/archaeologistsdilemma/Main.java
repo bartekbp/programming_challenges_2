@@ -2,7 +2,7 @@ package arithmeticandalgebra.archaeologistsdilemma;
 
 import java.io.IOException;
 
-class Main implements Runnable {
+public class Main implements Runnable {
     static String readLn(int maxLength) {
 
         byte line[] = new byte[maxLength];

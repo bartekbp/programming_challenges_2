@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.*;
 
 
-class Main implements Runnable {
+public class Main implements Runnable {
     static String readLn(int maxLength) {
 
         byte line[] = new byte[maxLength];

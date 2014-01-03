@@ -2,7 +2,7 @@ package combinatorics.expressions;
 import java.io.IOException;
 import java.math.BigInteger;
 
-class Main implements Runnable {
+public class Main implements Runnable {
     static String readLn(int maxLength) {
 
         byte line[] = new byte[maxLength];
