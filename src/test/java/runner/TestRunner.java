@@ -51,7 +51,7 @@ public class TestRunner {
     }
 
     private List<String> parametersForRunTest() {
-        List<Class<? extends Runnable>> classes = provider.provideClasses();
+        List<Class<?>> classes = provider.provideClasses();
 
         List<String> testCases = new ArrayList<String>();
         for(Class<?> clazz : classes) {

@@ -6,8 +6,8 @@ import java.util.List;
 public class TestClassesProvider {
 
     @SuppressWarnings("unchecked")
-    public List<Class<? extends Runnable>> provideClasses() {
-        return Arrays.asList(arithmeticandalgebra.archaeologistsdilemma.Main.class,
+    public List<Class<?>> provideClasses() {
+        return Arrays.asList((Class<?>) arithmeticandalgebra.archaeologistsdilemma.Main.class,
                              arithmeticandalgebra.multiplicationgame.Main.class,
                              arithmeticandalgebra.ones.Main.class,
                              arithmeticandalgebra.pairsumoniousnumbers.Main.class,
