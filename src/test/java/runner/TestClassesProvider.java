@@ -1,12 +1,14 @@
 package runner;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class TestClassesProvider {
 
     @SuppressWarnings("unchecked")
-    public List<Class<?>> provideClasses() {
+    public List<Class<?>> allTestClasses() {
         return Arrays.asList((Class<?>) arithmeticandalgebra.archaeologistsdilemma.Main.class,
                              arithmeticandalgebra.multiplicationgame.Main.class,
                              arithmeticandalgebra.ones.Main.class,
@@ -19,7 +21,12 @@ public class TestClassesProvider {
                              combinatorics.expressions.Main.class,
                              combinatorics.howmanyfibs.Main.class,
                              combinatorics.howmanypiecesofland.Main.class,
+                             combinatorics.completetreelabeling.Main.class,
                              football.Main.class,
                              shellsort.Main.class);
+    }
+
+    public Class<?> singleTestClass() {
+        return combinatorics.completetreelabeling.Main.class;
     }
 }

@@ -39,21 +39,21 @@ public class IOTestHelper {
         return out;
     }
 
-    public void assertOutput(String testName) throws IOException {
-        assertEquals(readResult(testName), getOutput());
+    public void assertOutput(String fileName)  {
+        assertEquals(readFile(fileName), getOutput());
     }
 
-    public void setInput(String testName) throws IOException {
+    public void setInput(String fileName) {
         oldInput = System.in;
-        System.setIn(readResource(testName));
+        System.setIn(readResource(fileName));
     }
 
-    private String readResult(String testName) throws IOException {
-        return readFile(testName + ".result");
-    }
-
-    private String readFile(String file) throws IOException {
-        return IOUtils.toString(readResource(file));
+    private String readFile(String file) {
+        try {
+            return IOUtils.toString(readResource(file));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private InputStream readResource(String file) {
