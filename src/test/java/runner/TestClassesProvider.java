@@ -22,11 +22,12 @@ public class TestClassesProvider {
                              combinatorics.howmanyfibs.Main.class,
                              combinatorics.howmanypiecesofland.Main.class,
                              combinatorics.completetreelabeling.Main.class,
+                             combinatorics.thepriestmathematician.Main.class,
                              football.Main.class,
                              shellsort.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return combinatorics.completetreelabeling.Main.class;
+        return combinatorics.thepriestmathematician.Main.class;
     }
 }
