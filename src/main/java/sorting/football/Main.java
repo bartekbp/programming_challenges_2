@@ -1,4 +1,4 @@
-package football;
+package sorting.football;
 
 import java.io.IOException;
 import java.util.*;

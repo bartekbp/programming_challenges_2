@@ -1,4 +1,4 @@
-package shellsort;
+package sorting.shellsort;
 
 import java.io.*;
 import java.util.*;

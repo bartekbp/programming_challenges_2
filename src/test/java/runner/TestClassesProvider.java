@@ -1,8 +1,6 @@
 package runner;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class TestClassesProvider {
@@ -25,8 +23,8 @@ public class TestClassesProvider {
                              combinatorics.thepriestmathematician.Main.class,
                              combinatorics.selfdescribingsequence.Main.class,
                              combinatorics.steps.Main.class,
-                             football.Main.class,
-                             shellsort.Main.class);
+                             sorting.football.Main.class,
+                             sorting.shellsort.Main.class);
     }
 
     public Class<?> singleTestClass() {
