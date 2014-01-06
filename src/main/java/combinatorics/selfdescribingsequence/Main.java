@@ -96,7 +96,7 @@ class NextValues {
 
         currentSum = 2;
         addOccurrence(2, 1);
-        
+
         int value = 3;
         while(currentSum < n) {
             int occurrences = nextValue();
