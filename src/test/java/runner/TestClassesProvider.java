@@ -25,10 +25,11 @@ public class TestClassesProvider {
                              combinatorics.steps.Main.class,
                              sorting.football.Main.class,
                              sorting.shellsort.Main.class,
-                             numbertheory.lightmorelight.Main.class);
+                             numbertheory.lightmorelight.Main.class,
+                             numbertheory.carmichaelnumbers.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return numbertheory.lightmorelight.Main.class;
+        return numbertheory.carmichaelnumbers.Main.class;
     }
 }
