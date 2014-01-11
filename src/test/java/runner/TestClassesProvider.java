@@ -24,10 +24,11 @@ public class TestClassesProvider {
                              combinatorics.selfdescribingsequence.Main.class,
                              combinatorics.steps.Main.class,
                              sorting.football.Main.class,
-                             sorting.shellsort.Main.class);
+                             sorting.shellsort.Main.class,
+                             numbertheory.lightmorelight.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return combinatorics.steps.Main.class;
+        return numbertheory.lightmorelight.Main.class;
     }
 }
