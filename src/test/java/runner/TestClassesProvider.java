@@ -27,10 +27,11 @@ public class TestClassesProvider {
                              sorting.shellsort.Main.class,
                              numbertheory.lightmorelight.Main.class,
                              numbertheory.carmichaelnumbers.Main.class,
-                             numbertheory.euclidproblem.Main.class);
+                             numbertheory.euclidproblem.Main.class,
+                             numbertheory.factovisors.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return numbertheory.euclidproblem.Main.class;
+        return numbertheory.factovisors.Main.class;
     }
 }
