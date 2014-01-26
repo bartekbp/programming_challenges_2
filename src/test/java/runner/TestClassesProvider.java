@@ -26,10 +26,11 @@ public class TestClassesProvider {
                              sorting.football.Main.class,
                              sorting.shellsort.Main.class,
                              numbertheory.lightmorelight.Main.class,
-                             numbertheory.carmichaelnumbers.Main.class);
+                             numbertheory.carmichaelnumbers.Main.class,
+                             numbertheory.euclidproblem.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return numbertheory.carmichaelnumbers.Main.class;
+        return numbertheory.euclidproblem.Main.class;
     }
 }
