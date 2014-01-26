@@ -28,10 +28,11 @@ public class TestClassesProvider {
                              numbertheory.lightmorelight.Main.class,
                              numbertheory.carmichaelnumbers.Main.class,
                              numbertheory.euclidproblem.Main.class,
-                             numbertheory.factovisors.Main.class);
+                             numbertheory.factovisors.Main.class,
+                             numbertheory.summationoffourprimes.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return numbertheory.factovisors.Main.class;
+        return numbertheory.summationoffourprimes.Main.class;
     }
 }
