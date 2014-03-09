@@ -30,10 +30,11 @@ public class TestClassesProvider {
                              numbertheory.euclidproblem.Main.class,
                              numbertheory.factovisors.Main.class,
                              numbertheory.summationoffourprimes.Main.class,
-                             numbertheory.smithnumbers.Main.class);
+                             numbertheory.smithnumbers.Main.class,
+                             numbertheory.marbles.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return numbertheory.smithnumbers.Main.class;
+        return numbertheory.marbles.Main.class;
     }
 }
