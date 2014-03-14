@@ -1,5 +1,7 @@
 package numbertheory.marbles;
+
 import java.io.IOException;
+
 
 public class Main implements Runnable {
     static String readLn(int maxLength) {
@@ -44,49 +46,96 @@ class Marbles implements Runnable {
             Box firstBox = readInputBox();
             Box secondBox = readInputBox();
 
-            boolean performSwap = !firstBox.isMoreEfficientThan(secondBox);
-
-            if(performSwap) {
-                calculateAndPrintSolution(n, secondBox.getCapacity(), firstBox.getCapacity(), Printer.swap());
-            } else {
-                calculateAndPrintSolution(n, firstBox.getCapacity(), secondBox.getCapacity(), Printer.normal());
-            }
+            calculateAndPrintSolution(n, firstBox, secondBox);
 
             n = readN();
         }
     }
 
-    private void calculateAndPrintSolution(long n, long moreEfficientBoxCapacity, long lessEfficientBoxCapacity,
-                                           Printer printer) {
-        long equalCapacities = lcm(moreEfficientBoxCapacity, lessEfficientBoxCapacity);
-        long baseCapacity = (n / equalCapacities) * (equalCapacities / moreEfficientBoxCapacity);
-        long newMax = n % equalCapacities;
-        long y = newMax % moreEfficientBoxCapacity;
-        long range = Math.min(equalCapacities, n);
-        while(y <= range) {
-            if((y % lessEfficientBoxCapacity) == 0) {
-                printer.printResult(baseCapacity + ((newMax - y) / moreEfficientBoxCapacity), y / lessEfficientBoxCapacity);
-                return;
-            }
-
-            y += moreEfficientBoxCapacity;
+    private void calculateAndPrintSolution(long n, Box firstBox, Box secondBox) {
+        GCDResult gcd = gcd(firstBox.getCapacity(), secondBox.getCapacity());
+        if((n % gcd.gcd) != 0) {
+            printFailed();
+            return;
         }
 
-        printFailed();
-    }
+        long scaledX = gcd.x * (n / gcd.gcd);
+        long scaledY = gcd.y * (n / gcd.gcd);
 
-    private long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
-    }
+        long lowerBound = ceil(-scaledX, secondBox.getCapacity() / gcd.gcd);
+        long upperBound = floor(scaledY, firstBox.getCapacity() / gcd.gcd);
 
-    private long gcd(long a, long b) {
-        while(b > 0) {
-            long c = a % b;
-            a = b;
-            b = c;
+        if(lowerBound > upperBound) {
+            printFailed();
+            return;
         }
 
-        return a;
+        long lcm = firstBox.getCapacity() * secondBox.getCapacity() / gcd.gcd;
+        long cost = firstBox.getCost() * (lcm / firstBox.getCapacity()) - secondBox.getCost() * (lcm / secondBox.getCapacity());
+        long solution;
+        if(cost < 0) {
+            solution = upperBound;
+        } else {
+            solution = lowerBound;
+        }
+
+        long m1 = calculateQuantity(scaledX, secondBox, gcd.gcd, solution, Sign.Plus);
+        long m2 = calculateQuantity(scaledY, firstBox, gcd.gcd, solution, Sign.Minus);
+
+        long singleM1Increment = lcm / firstBox.getCapacity();
+        long singleM2Increment = lcm / secondBox.getCapacity();
+        if(m1 < 0) {
+            long tmp = ceil(-m1, singleM1Increment);
+            m1 += tmp * singleM1Increment;
+            m2 -= tmp * singleM2Increment;
+        } else if(m2 < 0) {
+            long tmp = ceil(-m2, singleM2Increment);
+            m1 -= tmp * singleM1Increment;
+            m2 += tmp * singleM2Increment;
+        }
+
+        if(m1 < 0 || m2 < 0) {
+            printFailed();
+            return;
+        }
+
+        printSolution(m1, m2);
+    }
+
+    long ceil(long x, long y) {
+        if(x > 0) {
+            return (x + y - 1) / y;
+        } else {
+            return (x - y + 1) / y;
+        }
+    }
+
+    long floor(long x, long y) {
+        return x / y;
+    }
+
+    private long calculateQuantity(long m, Box otherBox, long gcd, long solution, Sign sign) {
+        return m + sign.sign() * (otherBox.getCapacity() / gcd) * solution;
+    }
+
+    private GCDResult gcd(long a, long b) {
+        if(a == 0) {
+            return new GCDResult(0, 1, b);
+        } else if(b == 0) {
+            return new GCDResult(1, 0, a);
+        } else if(b > a) {
+            GCDResult result = gcd(b, a);
+            long tmp = result.x;
+            result.x = result.y;
+            result.y = tmp;
+            return result;
+        } else {
+            GCDResult result = gcd(b, a % b);
+            long tmp = result.x;
+            result.x = result.y;
+            result.y = tmp - (a / b) * result.y;
+            return result;
+        }
     }
 
     private void printFailed() {
@@ -106,59 +155,51 @@ class Marbles implements Runnable {
 
         return new Box(capacity, cost);
     }
+
+    private void printSolution(long a, long b) {
+        System.out.println(a + " " + b);
+    }
 }
 
-class Box implements Comparable<Box> {
-    private long capacity;
-    private long cost;
+class Box {
+    private final long capacity;
+    private final long cost;
 
     Box(long capacity, long cost) {
         this.capacity = capacity;
         this.cost = cost;
     }
 
-    @Override
-    public int compareTo(Box otherBox) {
-        return (int) Math.signum(storageEfficiency(this) - storageEfficiency(otherBox));
-    }
-
-    public boolean isMoreEfficientThan(Box otherBox) {
-        return this.compareTo(otherBox) > 0;
-    }
-
     public long getCapacity() {
         return capacity;
     }
 
-    private static double storageEfficiency(Box b) {
-        return b.capacity / (double) b.cost;
+    public long getCost() {
+        return cost;
     }
 }
 
-class Printer {
-    private boolean reverseParameters = false;
+class GCDResult {
+    long x;
+    long y;
+    long gcd;
 
-    private Printer(boolean reverseParameters) {
-        this.reverseParameters = reverseParameters;
+    GCDResult(long x, long y, long gcd) {
+        this.x = x;
+        this.y = y;
+        this.gcd = gcd;
+    }
+}
+
+enum Sign {
+    Plus(1), Minus(-1);
+    private int sign;
+
+    Sign(int sign) {
+        this.sign = sign;
     }
 
-    public void printResult(long m1, long m2) {
-        long a1 = m1;
-        long a2 = m2;
-
-        if(reverseParameters) {
-            a1 = m2;
-            a2 = m1;
-        }
-
-        System.out.println(a1 + " " + a2);
-    }
-
-    public static Printer normal() {
-        return new Printer(false);
-    }
-
-    public static Printer swap() {
-        return new Printer(true);
+    public int sign() {
+        return sign;
     }
 }
