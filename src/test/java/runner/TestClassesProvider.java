@@ -31,10 +31,11 @@ public class TestClassesProvider {
                              numbertheory.factovisors.Main.class,
                              numbertheory.summationoffourprimes.Main.class,
                              numbertheory.smithnumbers.Main.class,
-                             numbertheory.marbles.Main.class);
+                             numbertheory.marbles.Main.class,
+                             numbertheory.repackaging.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return numbertheory.marbles.Main.class;
+        return numbertheory.repackaging.Main.class;
     }
 }

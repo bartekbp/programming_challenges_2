@@ -50,7 +50,7 @@ public class IOTestHelper {
 
     private String readFile(String file) {
         try {
-            return IOUtils.toString(readResource(file));
+            return IOUtils.toString(readResource(file)).replaceAll("\r", "");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
