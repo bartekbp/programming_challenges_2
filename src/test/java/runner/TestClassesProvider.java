@@ -32,10 +32,11 @@ public class TestClassesProvider {
                              numbertheory.summationoffourprimes.Main.class,
                              numbertheory.smithnumbers.Main.class,
                              numbertheory.marbles.Main.class,
-                             numbertheory.repackaging.Main.class);
+                             numbertheory.repackaging.Main.class,
+                             backtracking.littlebishops.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return numbertheory.repackaging.Main.class;
+        return backtracking.littlebishops.Main.class;
     }
 }
