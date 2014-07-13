@@ -33,10 +33,11 @@ public class TestClassesProvider {
                              numbertheory.smithnumbers.Main.class,
                              numbertheory.marbles.Main.class,
                              numbertheory.repackaging.Main.class,
-                             backtracking.littlebishops.Main.class);
+                             backtracking.littlebishops.Main.class,
+                             backtracking.puzzleproblem.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return backtracking.littlebishops.Main.class;
+        return backtracking.puzzleproblem.Main.class;
     }
 }
