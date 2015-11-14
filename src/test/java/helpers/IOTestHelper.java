@@ -40,7 +40,7 @@ public class IOTestHelper {
     }
 
     public void assertOutput(String fileName)  {
-        assertEquals(readFile(fileName), getOutput());
+        assertEquals(readFile(fileName).trim(), getOutput().trim());
     }
 
     public void setInput(String fileName) {
@@ -50,7 +50,7 @@ public class IOTestHelper {
 
     private String readFile(String file) {
         try {
-            return IOUtils.toString(readResource(file)).replaceAll("\r", "");
+            return IOUtils.toString(readResource(file)).replaceAll("\r", "").replaceAll("(?m)^#.*\n", "");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
