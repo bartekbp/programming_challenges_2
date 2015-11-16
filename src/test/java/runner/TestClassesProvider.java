@@ -35,10 +35,11 @@ public class TestClassesProvider {
                             numbertheory.repackaging.Main.class,
                             backtracking.littlebishops.Main.class,
                             backtracking.puzzleproblem.Main.class,
+                            backtracking.queue.Main.class,
                             backtracking.servicingstations.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return backtracking.servicingstations.Main.class;
+        return backtracking.queue.Main.class;
     }
 }
