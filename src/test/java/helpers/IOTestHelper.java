@@ -5,7 +5,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.*;
 import java.nio.file.Paths;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 public class IOTestHelper {
     private PrintStream oldOutput;
@@ -40,17 +40,25 @@ public class IOTestHelper {
     }
 
     public void assertOutput(String fileName)  {
-        assertEquals(readFile(fileName).trim(), getOutput().trim());
+        String expected = readFile(fileName).trim();
+        String actual = getOutput().trim();
+        String[] expectedLines = expected.split("\n") ;
+        String[] actualLines = actual.split("\n");
+        assertArrayEquals(expectedLines, actualLines);
     }
 
     public void setInput(String fileName) {
         oldInput = System.in;
-        System.setIn(readResource(fileName));
+        try {
+            System.setIn(new ByteArrayInputStream(readFile(fileName).getBytes("utf-8")));
+        } catch(Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private String readFile(String file) {
         try {
-            return IOUtils.toString(readResource(file)).replaceAll("\r", "").replaceAll("(?m)^#.*\n", "");
+            return IOUtils.toString(readResource(file)).replaceAll("\r", "").replaceAll("(?m)^#.*$[\n]?", "");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

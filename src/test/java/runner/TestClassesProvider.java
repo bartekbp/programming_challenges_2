@@ -37,10 +37,12 @@ public class TestClassesProvider {
                             backtracking.puzzleproblem.Main.class,
                             backtracking.queue.Main.class,
                             backtracking.servicingstations.Main.class,
-                            backtracking.tugofwar.Main.class);
+                            backtracking.tugofwar.Main.class,
+                            backtracking.gardenofeden.Main.class,
+                            backtracking.colorhash.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return backtracking.tugofwar.Main.class;
+        return backtracking.gardenofeden.Main.class;
     }
 }
