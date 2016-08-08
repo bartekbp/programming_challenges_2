@@ -39,10 +39,11 @@ public class TestClassesProvider {
                             backtracking.servicingstations.Main.class,
                             backtracking.tugofwar.Main.class,
                             backtracking.gardenofeden.Main.class,
-                            backtracking.colorhash.Main.class);
+                            backtracking.colorhash.Main.class,
+                            backtracking.biggersquareplease.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return backtracking.gardenofeden.Main.class;
+        return backtracking.biggersquareplease.Main.class;
     }
 }
