@@ -40,7 +40,8 @@ public class TestClassesProvider {
                             backtracking.tugofwar.Main.class,
                             backtracking.gardenofeden.Main.class,
                             backtracking.colorhash.Main.class,
-                            backtracking.biggersquareplease.Main.class);
+                            backtracking.biggersquareplease.Main.class,
+                            graphs.bicoloring.Main.class);
     }
 
     public Class<?> singleTestClass() {
