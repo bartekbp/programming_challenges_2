@@ -41,10 +41,11 @@ public class TestClassesProvider {
                             backtracking.gardenofeden.Main.class,
                             backtracking.colorhash.Main.class,
                             backtracking.biggersquareplease.Main.class,
-                            graphs.bicoloring.Main.class);
+                            graphs.bicoloring.Main.class,
+                            graphs.playingwithwheels.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return backtracking.biggersquareplease.Main.class;
+        return graphs.playingwithwheels.Main.class;
     }
 }
