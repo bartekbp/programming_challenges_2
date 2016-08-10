@@ -42,10 +42,11 @@ public class TestClassesProvider {
                             backtracking.colorhash.Main.class,
                             backtracking.biggersquareplease.Main.class,
                             graphs.bicoloring.Main.class,
-                            graphs.playingwithwheels.Main.class);
+                            graphs.playingwithwheels.Main.class,
+                            graphs.thetouristguide.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return graphs.playingwithwheels.Main.class;
+        return graphs.thetouristguide.Main.class;
     }
 }
