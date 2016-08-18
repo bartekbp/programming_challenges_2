@@ -43,10 +43,11 @@ public class TestClassesProvider {
                             backtracking.biggersquareplease.Main.class,
                             graphs.bicoloring.Main.class,
                             graphs.playingwithwheels.Main.class,
-                            graphs.thetouristguide.Main.class);
+                            graphs.thetouristguide.Main.class,
+                            graphs.slashmaze.Main.class);
     }
 
     public Class<?> singleTestClass() {
-        return graphs.thetouristguide.Main.class;
+        return graphs.slashmaze.Main.class;
     }
 }
