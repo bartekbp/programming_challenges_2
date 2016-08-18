@@ -44,6 +44,7 @@ public class TestClassesProvider {
                             graphs.bicoloring.Main.class,
                             graphs.playingwithwheels.Main.class,
                             graphs.thetouristguide.Main.class,
+                            graphs.editstepladders.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
