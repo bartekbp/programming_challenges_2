@@ -44,7 +44,7 @@ public class IOTestHelper {
         String actual = getOutput().trim();
         String[] expectedLines = expected.split("\n") ;
         String[] actualLines = actual.split("\n");
-        assertArrayEquals(expectedLines, actualLines);
+        assertArrayEquals(actualLines, expectedLines);
     }
 
     public void setInput(String fileName) {
