@@ -47,6 +47,7 @@ public class TestClassesProvider {
                             graphs.editstepladders.Main.class,
                             graphs.towerofcubes.Main.class,
                             graphs.fromdusktilldawn.Main.class,
+                            graphs.hanoitowertroublesagain.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
