@@ -48,6 +48,7 @@ public class TestClassesProvider {
                             graphs.towerofcubes.Main.class,
                             graphs.fromdusktilldawn.Main.class,
                             graphs.hanoitowertroublesagain.Main.class,
+                            graphs.freckles.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
