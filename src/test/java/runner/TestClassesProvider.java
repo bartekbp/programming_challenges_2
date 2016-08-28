@@ -50,6 +50,7 @@ public class TestClassesProvider {
                             graphs.hanoitowertroublesagain.Main.class,
                             graphs.freckles.Main.class,
                             graphs.necklace.Main.class,
+                            graphs.firestation.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
