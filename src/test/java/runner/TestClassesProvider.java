@@ -51,6 +51,8 @@ public class TestClassesProvider {
                             graphs.freckles.Main.class,
                             graphs.necklace.Main.class,
                             graphs.firestation.Main.class,
+                            graphs.war.Main.class,
+                            graphs.railroads.Main.class,
                             graphs.slashmaze.Main.class);
     }
 

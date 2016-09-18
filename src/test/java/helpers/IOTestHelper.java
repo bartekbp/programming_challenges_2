@@ -3,6 +3,7 @@ package helpers;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
+import java.util.*;
 import java.nio.file.Paths;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -44,6 +45,10 @@ public class IOTestHelper {
         String actual = getOutput().trim();
         String[] expectedLines = expected.split("\n") ;
         String[] actualLines = actual.split("\n");
+        if(!Arrays.equals(expectedLines, actualLines)) {
+            System.err.println("Got: " + Arrays.toString(actualLines));
+            System.err.println("Wanted: " + Arrays.toString(expectedLines));
+        }
         assertArrayEquals(expectedLines, actualLines);
     }
 
