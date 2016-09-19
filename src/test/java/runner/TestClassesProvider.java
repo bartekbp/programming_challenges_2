@@ -53,6 +53,7 @@ public class TestClassesProvider {
                             graphs.firestation.Main.class,
                             graphs.war.Main.class,
                             graphs.railroads.Main.class,
+                            graphs.touristguide.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
