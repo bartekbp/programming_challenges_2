@@ -55,6 +55,7 @@ public class TestClassesProvider {
                             graphs.railroads.Main.class,
                             graphs.touristguide.Main.class,
                             graphs.thegranddinner.Main.class,
+                            graphs.theproblemwiththeproblemsetter.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
