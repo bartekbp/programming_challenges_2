@@ -48,6 +48,7 @@ public class IOTestHelper {
         if(!Arrays.equals(expectedLines, actualLines)) {
             System.err.println("Got: " + Arrays.toString(actualLines));
             System.err.println("Wanted: " + Arrays.toString(expectedLines));
+            System.err.println();
         }
         assertArrayEquals(expectedLines, actualLines);
     }
