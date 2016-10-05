@@ -56,6 +56,8 @@ public class TestClassesProvider {
                             graphs.touristguide.Main.class,
                             graphs.thegranddinner.Main.class,
                             graphs.theproblemwiththeproblemsetter.Main.class,
+                            dynamicprogramming.isbiggersmarter.Main.class,
+                            dynamicprogramming.distinctsubsequences.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
