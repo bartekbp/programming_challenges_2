@@ -59,6 +59,7 @@ public class TestClassesProvider {
                             dynamicprogramming.isbiggersmarter.Main.class,
                             dynamicprogramming.distinctsubsequences.Main.class,
                             dynamicprogramming.weightsandmeasures.Main.class,
+                            dynamicprogramming.unidirectionaltsp.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
