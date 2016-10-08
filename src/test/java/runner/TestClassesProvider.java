@@ -60,6 +60,7 @@ public class TestClassesProvider {
                             dynamicprogramming.distinctsubsequences.Main.class,
                             dynamicprogramming.weightsandmeasures.Main.class,
                             dynamicprogramming.unidirectionaltsp.Main.class,
+                            dynamicprogramming.cuttingsticks.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
