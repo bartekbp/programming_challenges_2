@@ -63,6 +63,7 @@ public class TestClassesProvider {
                             dynamicprogramming.cuttingsticks.Main.class,
                             dynamicprogramming.ferryloading.Main.class,
                             dynamicprogramming.chopsticks.Main.class,
+                            dynamicprogramming.adventuresinmoving.Main.class,
                             graphs.slashmaze.Main.class);
     }
 
